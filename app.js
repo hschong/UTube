@@ -6,9 +6,6 @@ import cookieParser from "cookie-parser";
 import bodyParser from "body-parser"; 
 
 const app = express();
-const PORT = 4000;
-
-const handleListening = () => console.log(`Listening on http://localhost:${PORT}.`);
 const handleHome = (req, res) => res.send("Hi from Home!");
 const handleProfile = (req, res) => res.send("Hi from Profile!");
 
@@ -32,5 +29,5 @@ app.use(morgan("dev"));
 
 app.get("/", handleHome);   // route
 app.get("/profile", handleProfile); // route
-app.listen(PORT, handleListening);
 
+export default app;
