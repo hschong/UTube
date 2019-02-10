@@ -4,6 +4,7 @@ import morgan from "morgan";    // middleware for logging.
 import helmet from "helmet"    // Secure your Express apps by setting various HTTP headers.
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser"; 
+import { userRouter } from "./router.js";
 
 const app = express();
 const handleHome = (req, res) => res.send("Hi from Home!");
@@ -29,5 +30,7 @@ app.use(morgan("dev"));
 
 app.get("/", handleHome);   // route
 app.get("/profile", handleProfile); // route
+
+app.use("/user", userRouter);
 
 export default app;
