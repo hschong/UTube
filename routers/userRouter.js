@@ -1,6 +1,8 @@
 import express from "express";
 
-export const userRouter = express.Router();
+const userRouter = express.Router();
+
+export default userRouter;
 
 userRouter.get("/", (req, res) => res.send("user index"));
 userRouter.get("/edit", (req, res) => res.send("user edit"));
