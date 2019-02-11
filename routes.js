@@ -1,9 +1,9 @@
 // Global routes
 const HOME = "/";
+const SEARCH = "/search";
 const SIGNUP = "/signup";
 const SIGNIN = "/signin";
 const SIGNOUT = "/signout";
-const SEARCH = "/search";
 
 // User routes
 const USERS = "/users";
