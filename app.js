@@ -4,9 +4,9 @@ import morgan from "morgan"; // middleware for logging.
 import helmet from "helmet" // Secure your Express apps by setting various HTTP headers.
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser"; 
-import userRouter from "/routers/userRouter";
-import videoRouter from "/routers/videoRouter";
-import globalRouter from "/routers/globalRouter";
+import userRouter from "./routers/userRouter";
+import videoRouter from "./routers/videoRouter";
+import globalRouter from "./routers/globalRouter";
 import routes from "./routes";
 
 const app = express();
