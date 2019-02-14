@@ -21,7 +21,7 @@ const DELETE_VIDEO = "/:id/delete";
 const routes = {
     home: HOME,
     signup: SIGNUP,
-    signin: SIGNIN,
+    signin: SIGNIN, 
     signout: SIGNOUT,
     search: SEARCH,
     users: USERS,

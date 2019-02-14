@@ -3,6 +3,9 @@ header.header
         a(href=routes.home)
             <i class="fab fa-youtube"></i>
     .header__column
+        form(action=routes.search, method="get")
+            input(type="text", placeholder="Search by term ...", name="q")
+    .header__column
         ul
             li
                 a(href=routes.signup) Sign Up

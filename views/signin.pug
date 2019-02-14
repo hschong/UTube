@@ -1,4 +1,9 @@
 extends layouts/main
 
 block content
-    p sign in
+    .form-container
+        form(action=routes.signin, method="post")
+            input(type="email", name="email", placeholder="Type your email address")
+            input(type="password", name="password", placeholder="Type your password")
+            input(type="submit", name="submit", value="Sign in")
+    include partials/social_signin
