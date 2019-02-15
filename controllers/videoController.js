@@ -1,5 +1,6 @@
-export const home = (req, res) => res.render("home", {pageTitle: "Home"}); // go to home.pug
+import { arrayVideos } from "../db"
 
+export const home = (req, res) => res.render("home", {pageTitle: "Home", arrayVideos}); // browsing "home.pug".
 export const search = (req, res) => { 
     // const searchingBy = req.query.q;    // ES5
     const { // ES6
