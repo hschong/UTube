@@ -25,14 +25,14 @@ const routes = {
     signout: SIGNOUT,
     search: SEARCH,
     users: USERS,
-    user_details: USER_DETAILS,
-    edit_profile: EDIT_PROFILE,
-    change_password: CHANGE_PASSWORD,
+    userDetails: USER_DETAILS,
+    editProfile: EDIT_PROFILE,
+    changePassword: CHANGE_PASSWORD,
     videos: VIDEOS,
-    upload_video: UPLOAD_VIDEO,
-    video_details: VIDEO_DETAILS,
-    edit_video: EDIT_VIDEO,
-    delete_video: DELETE_VIDEO 
+    uploadVideo: UPLOAD_VIDEO,
+    videoDetails: VIDEO_DETAILS,
+    editVideo: EDIT_VIDEO,
+    deleteVideo: DELETE_VIDEO 
 };
 
 export default routes;
