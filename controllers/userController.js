@@ -22,6 +22,11 @@ export const renderAfterSignup = (req, res) => {
 
 export const renderSignin = (req, res) => res.render("signin", {pageTitle: "Sign In"});
 
+export const renderAfterSignin = (req, res) => {
+    console.log(req.body);
+    res.redirect(routes.home);
+}
+
 export const renderSignout = (req, res) => res.render("signout", {pageTitle: "Sign Out"});
 
 export const renderUsers = (req, res) => res.render("users", {pageTitle: "Users"});

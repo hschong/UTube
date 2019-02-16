@@ -7,7 +7,15 @@ header.header
             input(type="text", placeholder="Search by term ...", name="q")
     .header__column
         ul
-            li
-                a(href=routes.signup) Sign Up
-            li
-                a(href=routes.signin) Sign In
+            if user.isAuthenticatd
+                li
+                    a(href=routes.uploadVideo)|Upload video
+                li
+                    a(href=routes.userDetails(user.id))|Profile
+                li
+                    a(href=routes.signout) Sign out
+            else
+                li
+                    a(href=routes.signup) Sign Up
+                li
+                    a(href=routes.signin) Sign In

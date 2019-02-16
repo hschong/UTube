@@ -5,7 +5,8 @@ import {
     renderSignup, 
     renderAfterSignup, 
     renderSignin, 
-    renderSignout 
+    renderAfterSignin,
+    renderSignout
 } from "../controllers/userController";
 
 const globalRouter = express.Router();
@@ -19,6 +20,8 @@ globalRouter.get(routes.signup, renderSignup);
 globalRouter.post(routes.signup, renderAfterSignup);
 
 globalRouter.get(routes.signin, renderSignin);
+globalRouter.post(routes.signin, renderAfterSignin);
+
 globalRouter.get(routes.signout, renderSignout);
 
 
