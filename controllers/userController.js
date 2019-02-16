@@ -14,10 +14,9 @@ export const renderAfterSignup = (req, res) => {
     if (password1 !== password2) {
         res.status(400);
         res.render("signup", {pageTitle: "Sign Up"});
-    } else {    // To do for a resistered user
+    } else {  // To do for a resistered user
         res.redirect(routes.home);
     }
-    
 };
 
 export const renderSignin = (req, res) => res.render("signin", {pageTitle: "Sign In"});
@@ -27,7 +26,9 @@ export const renderAfterSignin = (req, res) => {
     res.redirect(routes.home);
 }
 
-export const renderSignout = (req, res) => res.render("signout", {pageTitle: "Sign Out"});
+export const renderSignout = (req, res) => {
+    res.redirect(routes.home);
+}; 
 
 export const renderUsers = (req, res) => res.render("users", {pageTitle: "Users"});
 

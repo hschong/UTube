@@ -5,6 +5,7 @@ block content
     .videos
         each video in arrayVideos
             +videoBlock({
+                id: video.id,
                 title: video.title,
                 description: video.description,
                 source: video.videoSource,

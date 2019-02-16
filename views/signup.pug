@@ -3,9 +3,9 @@ extends layouts/main
 block content
     .form-container
         form(action=routes.signup, method="post")
-            input(type="text", name="name", placeholder="Full name")
-            input(type="email", name="email", placeholder="Type your email address")
-            input(type="password", name="password1", placeholder="Type your password")
-            input(type="password", name="password2", placeholder="Verify your password")
+            input(type="text", name="name", placeholder="Full name", required=true), required=true
+            input(type="email", name="email", placeholder="Type your email address", required=true)
+            input(type="password", name="password1", placeholder="Type your password", required=true)
+            input(type="password", name="password2", placeholder="Verify your password", required=true)
             input(type="submit", name="submit", value="Sign up")
     include partials/social_signin
