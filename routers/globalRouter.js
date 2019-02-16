@@ -1,7 +1,12 @@
 import express from "express";
 import routes from "../routes";
 import { renderHome, renderSearch } from "../controllers/videoController";
-import { renderSignup, renderSignin, renderSignout } from "../controllers/userController";
+import { 
+    renderSignup, 
+    renderAfterSignup, 
+    renderSignin, 
+    renderSignout 
+} from "../controllers/userController";
 
 const globalRouter = express.Router();
 
@@ -9,7 +14,10 @@ export default globalRouter
 
 globalRouter.get(routes.home, renderHome);
 globalRouter.get(routes.search, renderSearch);
+
 globalRouter.get(routes.signup, renderSignup);
+globalRouter.post(routes.signup, renderAfterSignup);
+
 globalRouter.get(routes.signin, renderSignin);
 globalRouter.get(routes.signout, renderSignout);
 

@@ -7,7 +7,7 @@ export const renderSearch = (req, res) => {
     const { // ES6
         query: {q: searchingBy}
     } = req;
-    res.render("search", {pageTitle: "Search", searchingBy});
+    res.render("search", {pageTitle: "Search", searchingBy, arrayVideos});
 };
 
 export const renderVideos = (req, res) => res.render("videos", {pageTitle: "Videos"});
