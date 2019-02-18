@@ -1,4 +1,4 @@
-import { arrayVideos } from "../db"
+
 import routes from "../routes";
 
 export const renderHome = (req, res) => res.render("home", {pageTitle: "Home", arrayVideos}); // browsing "home.pug".
