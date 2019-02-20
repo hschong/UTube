@@ -1,7 +1,15 @@
-
 import routes from "../routes";
+import videoModel from "../models/video";
 
-export const renderHome = (req, res) => res.render("home", {pageTitle: "Home", arrayVideos}); // browsing "home.pug".
+export const renderHome = async(req, res) => {
+    try {
+        const arrayVideos = await videoModel.find({});
+        res.render("home", {pageTitle: "Home", arrayVideos}); // browsing "home.pug".
+    } catch (error) {
+        console.log(error);
+        res.render("home", {pageTitle: "Home", arrayVideos: []});
+    }
+}
 
 export const renderSearch = (req, res) => { 
     // const searchingBy = req.query.q;    // ES5
@@ -19,12 +27,21 @@ export const renderEditVideo = (req, res) => res.render("edit_video", {pageTitle
 
 export const renderUploadVideo = (req, res) => res.render("upload_video", {pageTitle: "Upload video"});
 
-export const renderAfterUploadVideo = (req, res) => {
+export const renderAfterUploadVideo = async(req, res) => {
     const {
-        body: { file, title, description }
+        body: { title, description },
+        file: { path }
     } = req;
-    res.redirect(routes.videoDetails(13298))
-};
+    console.log(title, description, path);
 
+    const newVideo = await videoModel.create({
+        fileURL: path,
+        title,
+        description
+    });
+ 
+    console.log(newVideo);
+    res.redirect(routes.videoDetail(newVideo.id));
+};
 
 export const renderDeleteVideo = (req, res) => res.render("delete_video", {pageTitle: "Delete video"});

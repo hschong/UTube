@@ -2,9 +2,9 @@ extends layouts/main
 
 block content
     .form-container
-        form(action=`/videos${routes.uploadVideo}`, method="post")
+        form(action=`/videos${routes.uploadVideo}`, method="post", enctype="multipart/form-data")
             label(for="file") Video file
-            input(type="file", id="upload_video", name="file", required=true)
+            input(type="file", id="upload_video", name="videoFile", required=true, accept="video/*")
             input(type="text", placeholder="Title", name="title", required=true)
             textarea(name="description", placeholder="Description", required=true)
             input(type="submit", value="Upload video")
