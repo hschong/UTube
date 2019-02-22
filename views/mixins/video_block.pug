@@ -1,7 +1,6 @@
-//- video is an object in arrayVideos
-mixin videoBlock(objVideo = {})
+mixin videoBlock(video = {})
     .videoBlock
-        a(href=routes.videoDetails(objVideo.id))
-            video.videoBlock__thumbnail(src=objVideo.source, controls=true)
-            h4.videoBlock__title=objVideo.title
-            h6.videoBlock__views=objVideo.views
+        a(href=routes.videoDetails(video.id))
+            video.videoBlock__thumbnail(src=video.videoUrl, controls=true)
+            h4.videoBlock__title=video.title
+            h6.videoBlock__views=video.views

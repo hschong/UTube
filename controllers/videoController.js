@@ -35,7 +35,7 @@ export const renderAfterUploadVideo = async(req, res) => {
     console.log(title, description, path);
 
     const newVideo = await videoModel.create({
-        fileURL: path,
+        videoUrl: path,
         title,
         description
     });
