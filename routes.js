@@ -8,15 +8,15 @@ const SIGNOUT = "/signout";
 // User routes
 const USERS = "/users";
 const USER_DETAILS = "/:id";
-const EDIT_PROFILE = "/edit-profile";
+const EDIT_PROFILE = "/edit";
 const CHANGE_PASSWORD = "/change-password";
 
 // Video routes
 const VIDEOS = "/videos";
 const UPLOAD_VIDEO = "/upload-video";
 const VIDEO_DETAILS = "/:id";
-const EDIT_VIDEO = "/:id/edit-video";
-const DELETE_VIDEO = "/:id/delete-video";
+const EDIT_VIDEO = "/:id/edit";
+const DELETE_VIDEO = "/:id/delete";
 
 const routes = {
     home: HOME,
@@ -43,7 +43,13 @@ const routes = {
             return VIDEO_DETAILS;
         }
     },
-    editVideo: EDIT_VIDEO,
+    editVideo: (id) => {
+        if (id) {
+            return `/videos/${id}/edit`;
+        } else {
+            return EDIT_VIDEO;
+        }
+    },
     deleteVideo: DELETE_VIDEO 
 };
 
