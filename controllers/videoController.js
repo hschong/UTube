@@ -32,9 +32,6 @@ export const renderAfterUploadVideo = async(req, res) => {
         body: { title, description },
         file: { path }
     } = req;
-    console.log(title, description, path);
-    console.log("req.body", req.body);
-    console.log("req.file", req.file);
 
     const newVideo = await videoModel.create({
         videoUrl: path,
@@ -42,8 +39,7 @@ export const renderAfterUploadVideo = async(req, res) => {
         description
     });
  
-    console.log(newVideo);
-    res.redirect(routes.videoDetail(newVideo.id));
+    res.redirect(routes.videoDetails(newVideo.id));
 };
 
 export const renderDeleteVideo = (req, res) => res.render("delete_video", {pageTitle: "Delete video"});

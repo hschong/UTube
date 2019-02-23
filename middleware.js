@@ -11,5 +11,5 @@ export const localsMiddleware = (req, res, next) => {
     next();
 }
 
-const multerVideo = multer({ destination: "uploads/videos/" });
+const multerVideo = multer({ dest: 'uploads/videos/' });
 export const uploadVideo = multerVideo.single("videoFile"); // videoFile from upload_video.pug.
