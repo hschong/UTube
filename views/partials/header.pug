@@ -4,7 +4,7 @@ header.header
             <i class="fab fa-youtube"></i>
     .header__column
         form(action=routes.search, method="get")
-            input(type="text", placeholder="Search by term ...", name="q")
+            input(type="text", placeholder="Search by term ...", name="q", style={color: 'white', background: 'black'})
     .header__column
         ul
             if user.isAuthenticatd

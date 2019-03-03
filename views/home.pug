@@ -3,7 +3,7 @@ include mixins/video_block
 
 block content
     .videos
-        each video in arrayVideos
+        each video in videos
             +videoBlock({
                 id: video.id,
                 title: video.title,

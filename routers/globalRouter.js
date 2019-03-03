@@ -1,6 +1,6 @@
 import express from "express";
 import routes from "../routes";
-import { renderHome, renderSearch } from "../controllers/videoController";
+import { home, search } from "../controllers/videoController";
 import { 
     renderSignup, 
     renderAfterSignup, 
@@ -13,8 +13,8 @@ const globalRouter = express.Router();
 
 export default globalRouter
 
-globalRouter.get(routes.home, renderHome);
-globalRouter.get(routes.search, renderSearch);
+globalRouter.get(routes.home, home);
+globalRouter.get(routes.search, search);
 
 globalRouter.get(routes.signup, renderSignup);
 globalRouter.post(routes.signup, renderAfterSignup);
