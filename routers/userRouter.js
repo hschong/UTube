@@ -1,11 +1,11 @@
-import express from "express";
-import routes from "../routes";
-import { 
+import express from 'express';
+import routes from '../routes';
+import {
     renderUsers,
-    renderUserdetails, 
-    renderEditProfile, 
-    renderChangePassword 
-} from "../controllers/userController";
+    renderUserdetails,
+    renderEditProfile,
+    renderChangePassword,
+} from '../controllers/userController';
 
 const userRouter = express.Router();
 

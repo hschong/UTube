@@ -1,17 +1,17 @@
-import express from "express";
-import routes from "../routes";
-import { home, search } from "../controllers/videoController";
-import { 
-    renderSignup, 
-    renderAfterSignup, 
-    renderSignin, 
+import express from 'express';
+import routes from '../routes';
+import { home, search } from '../controllers/videoController';
+import {
+    renderSignup,
+    renderAfterSignup,
+    renderSignin,
     renderAfterSignin,
-    renderSignout
-} from "../controllers/userController";
+    renderSignout,
+} from '../controllers/userController';
 
 const globalRouter = express.Router();
 
-export default globalRouter
+export default globalRouter;
 
 globalRouter.get(routes.home, home);
 globalRouter.get(routes.search, search);
@@ -23,7 +23,6 @@ globalRouter.get(routes.signin, renderSignin);
 globalRouter.post(routes.signin, renderAfterSignin);
 
 globalRouter.get(routes.signout, renderSignout);
-
 
 
 /*
