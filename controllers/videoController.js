@@ -11,11 +11,21 @@ export const home = async (req, res) => {
     }
 };
 
-export const search = (req, res) => {
+export const search = async (req, res) => {
     // const searchingBy = req.query.q;    // ES5
     const { // ES6
         query: { q: searchingBy },
     } = req;
+
+    let videos = [];
+    try {
+        videos = await videoModel.find({
+            title: { $regex: searchingBy, $options: 'i' },
+        });
+    } catch (error) {
+        console.log(error);
+    }
+
     res.render('search', { pageTitle: 'Search', searchingBy, videos });
 };
 
@@ -28,7 +38,7 @@ export const videoDetails = async (req, res) => {
 
     try {
         const video = await videoModel.findById(id);
-        res.render('video_details', { pageTitle: 'Video details', video });
+        res.render('video_details', { pageTitle: video.title, video });
     } catch (error) {
         console.log(error);
         res.redirect(routes.home);
