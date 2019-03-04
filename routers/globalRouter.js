@@ -2,11 +2,11 @@ import express from 'express';
 import routes from '../routes';
 import { home, search } from '../controllers/videoController';
 import {
-    renderSignup,
-    renderAfterSignup,
-    renderSignin,
-    renderAfterSignin,
-    renderSignout,
+    getSignUp,
+    postSignUp,
+    getSignIn,
+    postSignIn,
+    signOut,
 } from '../controllers/userController';
 
 const globalRouter = express.Router();
@@ -16,13 +16,13 @@ export default globalRouter;
 globalRouter.get(routes.home, home);
 globalRouter.get(routes.search, search);
 
-globalRouter.get(routes.signup, renderSignup);
-globalRouter.post(routes.signup, renderAfterSignup);
+globalRouter.get(routes.signup, getSignUp);
+globalRouter.post(routes.signup, postSignUp);
 
-globalRouter.get(routes.signin, renderSignin);
-globalRouter.post(routes.signin, renderAfterSignin);
+globalRouter.get(routes.signin, getSignIn);
+globalRouter.post(routes.signin, postSignIn);
 
-globalRouter.get(routes.signout, renderSignout);
+globalRouter.get(routes.signout, signOut);
 
 
 /*

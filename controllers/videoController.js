@@ -29,8 +29,6 @@ export const search = async (req, res) => {
     res.render('search', { pageTitle: 'Search', searchingBy, videos });
 };
 
-export const renderVideos = (req, res) => res.render('videos', { pageTitle: 'videos' });
-
 export const videoDetails = async (req, res) => {
     const {
         params: { id },
